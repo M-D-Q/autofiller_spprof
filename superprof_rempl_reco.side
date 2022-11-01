@@ -1,0 +1,171 @@
+{
+  "id": "32671049-87c7-404a-8024-e1f8417fa9a9",
+  "version": "2.0",
+  "name": "superprof_rempl_reco",
+  "url": "https://www.superprof.fr",
+  "tests": [{
+    "id": "5d1a2913-c7b5-4797-92c0-3e688c5adf23",
+    "name": "rempl reco 1",
+    "commands": [{
+      "id": "86ee95f6-bf16-49b9-9d03-9bfbfaf3119e",
+      "comment": "",
+      "command": "open",
+      "target": "/ir/19517987-63148d",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "06681113-db5e-470a-a220-c2a1e6c14da0",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1550x830",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f06cf95e-7103-4a25-a637-355cfdda658b",
+      "comment": "",
+      "command": "click",
+      "target": "id=why_him",
+      "targets": [
+        ["id=why_him", "id"],
+        ["name=_commentaire", "name"],
+        ["css=#why_him", "css:finder"],
+        ["xpath=//textarea[@id='why_him']", "xpath:attributes"],
+        ["xpath=//form[@id='form_reco']/div/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0417448a-6949-4625-8a40-d781f305daa7",
+      "comment": "",
+      "command": "type",
+      "target": "id=why_him",
+      "targets": [
+        ["id=why_him", "id"],
+        ["name=_commentaire", "name"],
+        ["css=#why_him", "css:finder"],
+        ["xpath=//textarea[@id='why_him']", "xpath:attributes"],
+        ["xpath=//form[@id='form_reco']/div/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Olessia est une super prof, très méthodique et axée résultat, tout en étant fun et décontractée!"
+    }, {
+      "id": "57d5a976-241f-4c54-803c-02ceb1b031de",
+      "comment": "",
+      "command": "click",
+      "target": "name=submit",
+      "targets": [
+        ["name=submit", "name"],
+        ["css=.button", "css:finder"],
+        ["xpath=//input[@name='submit']", "xpath:attributes"],
+        ["xpath=//form[@id='form_reco']/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9844d100-dc98-4e9e-997f-caadb1dad465",
+      "comment": "",
+      "command": "click",
+      "target": "css=.signup .buttons-container > .big-button",
+      "targets": [
+        ["css=.signup .buttons-container > .big-button", "css:finder"],
+        ["xpath=//div[@id='connect-modal']/div/div/div[2]/div/div[3]/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[3]/div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "150cdbd7-2e96-4c31-8e14-10cb05275dc3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.focus > input",
+      "targets": [
+        ["css=.focus > input", "css:finder"],
+        ["xpath=(//input[@type='text'])[5]", "xpath:attributes"],
+        ["xpath=//form[@id='signup-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c34878bb-006c-45be-a917-5a518d38dab0",
+      "comment": "",
+      "command": "type",
+      "target": "css=.focus > input",
+      "targets": [
+        ["css=.focus > input", "css:finder"],
+        ["xpath=(//input[@type='text'])[5]", "xpath:attributes"],
+        ["xpath=//form[@id='signup-form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/div/input", "xpath:position"]
+      ],
+      "value": "Jean"
+    }, {
+      "id": "c8d052d6-34ff-4b57-bd47-0e4a919a971b",
+      "comment": "",
+      "command": "type",
+      "target": "css=.focus > input",
+      "targets": [
+        ["css=.focus > input", "css:finder"],
+        ["xpath=(//input[@type='text'])[6]", "xpath:attributes"],
+        ["xpath=//form[@id='signup-form']/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "Dehuys"
+    }, {
+      "id": "0abd011b-861a-4aec-8fd5-56fa39df2122",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.focus > input", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//form[@id='signup-form']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//form/div[2]/input", "xpath:position"]
+      ],
+      "value": "jean.dehuys@gmail.com"
+    }, {
+      "id": "595a5842-fb82-4f34-9b2c-2f089a633ea0",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=.focus > input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//form[@id='signup-form']/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "Ravlyk2022"
+    }, {
+      "id": "06d1842f-6cc2-473f-97e2-2657036755ac",
+      "comment": "",
+      "command": "click",
+      "target": "css=.signup .buttons-container > .big-button",
+      "targets": [
+        ["css=.signup .buttons-container > .big-button", "css:finder"],
+        ["xpath=//div[@id='connect-modal']/div/div/div[2]/div/div[3]/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div/div[3]/div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4e98059-d776-4e23-97ef-b081bcd7cf22",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pg-global-content",
+      "targets": [
+        ["css=.pg-global-content", "css:finder"],
+        ["xpath=//div[@id='popin-reco-confirm']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//body/div[2]/div[2]/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "3f579c8f-629b-4fde-8c22-6878ff72da1f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["5d1a2913-c7b5-4797-92c0-3e688c5adf23"]
+  }],
+  "urls": ["https://www.superprof.fr/"],
+  "plugins": []
+}

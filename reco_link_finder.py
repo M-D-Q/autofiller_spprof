@@ -20,28 +20,42 @@ browser.get(url)
 browser.maximize_window()
 
 #####Login
-username = "XXX"
+email = "XXX"
 password = "XXX"
 
 #click sur le bouton "connexion"
 browser.find_element(By.XPATH, value="/html/body/div[2]/div[1]/header/div[1]/div[3]/button").click()
 
 #renseigner adresse email et mdp
-browser.find_element(By.XPATH, value="/html/body/div[2]/div[5]/div/div/div[2]/div/div[4]/div[1]/div/form/div[1]/input").send_keys(str(username))
+browser.find_element(By.XPATH, value="/html/body/div[2]/div[5]/div/div/div[2]/div/div[4]/div[1]/div/form/div[1]/input").send_keys(str(email))
 browser.find_element(By.XPATH, value="/html/body/div[2]/div[5]/div/div/div[2]/div/div[4]/div[1]/div[2]/form/div[2]/input").send_keys(str(password))
 browser.find_element(By.XPATH, value="/html/body/div[2]/div[5]/div/div/div[2]/div/div[4]/div[2]/div[1]/div[2]").click()
 # Connexion Reussie
 
 ##### go tableau de bord
 browser.get("https://www.superprof.fr/tableau-de-bord.html")
+## get adresse
+adresse = browser.findElement(By.XPATH("/html/body/div[1]/div[2]/div/div[1]/div[1]/div[3]")).getText()
+##get price
+price = browser.findElement(By.XPATH("/html/body/div[1]/div[2]/div/div[2]/div[4]/ul/div/li/div[2]/div/span[2]/span[1]")).getText()
+
+
+#Link pour annonces
+browser.get("https://www.superprof.fr/tableau-de-bord.html/annonces/liste/")
+
+#choper le lien de reco
+lien_reco = browser.findElement(By.XPATH("/html/body/div[1]/div[2]/div/div/main/div/div[1]/div[7]/div[2]/div/input")).getText()
+print(lien_reco)
+
+#voir en tant qu'eleve et prendre le nombre d'avis
+browser.find_element(By.XPATH, value="/html/body/div[1]/div[2]/div/div/main/div/div[2]/div[2]/div[2]/a").click()
+nb_reco = browser.findElement(By.XPATH("/html/body/div[2]/div[2]/div/div[1]/div/div[2]/div[2]/div[4]/div[1]/div[2]/span[2]")).getText()
+print(nb_reco)
 
 browser.quit()
 
 
 
-
-#Link pour annonces
-#https://www.superprof.fr/tableau-de-bord.html/annonces/liste/
 
 #Xpath du lien recommandation
 #/html/body/div[1]/div[2]/div/div/main/div/div[1]/div[7]/div[2]/div/input
