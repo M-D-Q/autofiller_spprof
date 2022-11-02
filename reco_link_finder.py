@@ -8,7 +8,11 @@ from selenium.webdriver.support.select import Select
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import Select
 import time
+from datetime import date
 from selenium.webdriver.chrome.options import Options
+import json
+from definition_fonctions import *
+
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
 
@@ -22,6 +26,7 @@ browser.maximize_window()
 #####Login
 email = "XXX"
 password = "XXX"
+id_compte = email_split(email)
 
 #click sur le bouton "connexion"
 browser.find_element(By.XPATH, value="/html/body/div[2]/div[1]/header/div[1]/div[3]/button").click()
@@ -54,7 +59,21 @@ print(nb_reco)
 
 browser.quit()
 
+#get la date d'aujourd'hui
+today = str(date.today())
 
+	# python object to be appended
+y = {"id": id_compte,
+    "email": email,
+    "mdp": password,
+    "ville": adresse,
+    "reco_link":lien_reco,
+    "reco_count":nb_reco,
+    "price":price,
+    "date_modif":today
+	}
+
+write_json(y)
 
 
 #Xpath du lien recommandation
