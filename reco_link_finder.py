@@ -17,7 +17,7 @@ chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
 
 ## get la liste des identifiants
-liste_email = get_stuff_from_csv('id.csv')
+liste_email = get_stuff_from_csv('id2.csv')
 
 for chocolat in liste_email :
 
