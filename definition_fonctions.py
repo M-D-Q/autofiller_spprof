@@ -20,4 +20,8 @@ def write_json(new_data, filename):
 
 
 #get CSV info per line
-def csv 
+def get_stuff_from_csv(filename) :
+	with open (filename, mode='r') as csv_file:
+		reader = csv.reader(csv_file, delimiter=',')
+		data=list(reader)
+	print(data)
