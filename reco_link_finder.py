@@ -17,12 +17,17 @@ chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
 
 ## get la liste des identifiants
-liste_email = get_stuff_from_csv('id2.csv')
 
+
+i=0
+
+#liste_email = get_stuff_from_csv('id.csv')
+liste_email = ['russe.avec.olessia+un@gmail.com', 'russe.avec.olessia+2@gmail.com', 'russe.avec.olessia+3@gmail.com', 'russe.avec.olessia+4@gmail.com', 'russe.avec.olessia+5@gmail.com', 'russe.avec.olessia+6@gmail.com', 'russe.avec.olessia+7@gmail.com', 'russe.avec.olessia+8@gmail.com', 'russe.avec.olessia+9@gmail.com', 'russe.avec.olessia+10@gmail.com', 'russe.avec.olessia+11@gmail.com', 'russe.avec.olessia+12@gmail.com', 'russe.avec.olessia+13@gmail.com', 'russe.avec.olessia+14@gmail.com', 'russe.avec.olessia+15@gmail.com', 'russe.avec.olessia+16@gmail.com', 'russe.avec.olessia+17@gmail.com', 'russe.avec.olessia+51@gmail.com', 'russe.avec.olessia+52@gmail.com', 'russe.avec.olessia+53@gmail.com', 'russe.avec.olessia+57@gmail.com', 'russe.avec.olessia+58@gmail.com', 'russe.avec.olessia+59@gmail.com', 'russe.avec.olessia+60@gmail.com', 'russe.avec.olessia+61@gmail.com', 'russe.avec.olessia+74@gmail.com', 'russe.avec.olessia+75@gmail.com', 'russe.avec.olessia+76@gmail.com', 'russe.avec.olessia+77@gmail.com', 'russe.avec.olessia+78@gmail.com', 'russe.avec.olessia+79@gmail.com', 'russe.avec.olessia+81@gmail.com', 'russe.avec.olessia+87@gmail.com', 'russe.avec.olessia+89@gmail.com', 'russe.avec.olessia+90@gmail.com', 'russe.avec.olessia+91@gmail.com', 'russe.avec.olessia+92@gmail.com', 'russe.avec.olessia+93@gmail.com', 'russe.avec.olessia+94@gmail.com', 'russe.avec.olessia+95@gmail.com', 'russe.avec.olessia+96@gmail.com', 'russe.avec.olessia+97@gmail.com', 'russe.avec.olessia+98@gmail.com', 'russe.avec.olessia+99@gmail.com', 'russe.avec.olessia+100@gmail.com']
+print (liste_email)
 for chocolat in liste_email :
 
     ##### infos Login
-    email = liste_email[chocolat]
+    email = liste_email[i]
     password = "Kiev2022"
     id_compte = email_split(email)
 
@@ -82,7 +87,8 @@ for chocolat in liste_email :
         }
 
     write_json(y,'accounts.json')
-
+    i+=1
+    print("""c'etait la procédure numero : """ + str(i))
 
 #Xpath du lien recommandation
 #/html/body/div[1]/div[2]/div/div/main/div/div[1]/div[7]/div[2]/div/input

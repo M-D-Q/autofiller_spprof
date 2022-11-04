@@ -22,6 +22,6 @@ def write_json(new_data, filename):
 #get CSV info per line
 def get_stuff_from_csv(filename) :
 	with open (filename, mode='r') as csv_file:
-		reader = csv.reader(csv_file, delimiter=',')
+		reader = csv.reader(csv_file)
 		data=list(reader)
-	print(data)
+	return(data)
