@@ -19,7 +19,7 @@ class TestRemplreco1():
     self.driver.quit()
   
   def test_remplreco1(self):
-    self.driver.get("https://www.superprof.fr/ir/19517987-63148d")
+    self.driver.get("https://www.superprof.fr/ir/20253866-58fe64")
     self.driver.set_window_size(1550, 830)
     self.driver.find_element(By.ID, "why_him").click()
     self.driver.find_element(By.ID, "why_him").send_keys("Olessia est une super prof, très méthodique et axée résultat, tout en étant fun et décontractée!")
@@ -28,7 +28,7 @@ class TestRemplreco1():
     self.driver.find_element(By.CSS_SELECTOR, ".focus > input").click()
     self.driver.find_element(By.CSS_SELECTOR, ".focus > input").send_keys("Jean")
     self.driver.find_element(By.CSS_SELECTOR, ".focus > input").send_keys("Dehuys")
-    self.driver.find_element(By.NAME, "email").send_keys("jean.dehuys@gmail.com")
+    self.driver.find_element(By.NAME, "email").send_keys("jean.dehuys78@gmail.com")
     self.driver.find_element(By.NAME, "password").send_keys("Ravlyk2022")
     self.driver.find_element(By.CSS_SELECTOR, ".signup .buttons-container > .big-button").click()
     self.driver.find_element(By.CSS_SELECTOR, ".pg-global-content").click()

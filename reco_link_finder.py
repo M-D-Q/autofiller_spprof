@@ -12,6 +12,7 @@ from datetime import date
 from selenium.webdriver.chrome.options import Options
 import json
 from definition_fonctions import *
+import pyperclip
 
 chrome_options = Options()
 chrome_options.add_experimental_option("detach", True)
@@ -45,30 +46,53 @@ for chocolat in liste_email :
     browser.find_element(By.XPATH, value="/html/body/div[2]/div[1]/header/div[1]/div[3]/button").click()
 
     #renseigner adresse email et mdp
+    time.sleep(3)
     browser.find_element(By.XPATH, value="/html/body/div[2]/div[5]/div/div/div[2]/div/div[4]/div[1]/div/form/div[1]/input").send_keys(str(email))
-    browser.find_element(By.XPATH, value="/html/body/div[2]/div[5]/div/div/div[2]/div/div[4]/div[1]/div[2]/form/div[2]/input").send_keys(str(password))
+    #WebDriverWait(browser, 5).until(EC.element_to_be_clickable(By.XPATH, value="/html/body/div[2]/div[5]/div/div/div[2]/div/div[4]/div[1]/div/form/div[1]/input")).send_keys(str(email))
+    browser.find_element(By.XPATH, value="/html/body/div[2]/div[5]/div/div/div[2]/div/div[4]/div[1]/div/form/div[2]/input").send_keys(str(password))
     browser.find_element(By.XPATH, value="/html/body/div[2]/div[5]/div/div/div[2]/div/div[4]/div[2]/div[1]/div[2]").click()
     # Connexion Reussie
 
     ##### go tableau de bord
-    browser.get("https://www.superprof.fr/tableau-de-bord.html")
-    ## get adresse
-    adresse = browser.findElement(By.XPATH("/html/body/div[1]/div[2]/div/div[1]/div[1]/div[3]")).getText()
-    ##get price
-    price = browser.findElement(By.XPATH("/html/body/div[1]/div[2]/div/div[2]/div[4]/ul/div/li/div[2]/div/span[2]/span[1]")).getText()
+    #browser.find_element(By.XPATH, value="/html/body/div[2]/div[1]/header/div[1]/div[3]/button/div/div[1]").click()
+    time.sleep(1)
+    #browser.find_element(By.XPATH, value="/html/body/div[2]/div[1]/header/div[3]/div[1]/ul/li[1]").click()
+    #browser.find_element(By.CSS_SELECTOR, ".static-content .avatar-wrapper").click()
+    WebDriverWait(browser, 5).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".static-content .avatar-wrapper"))).click()
+    browser.find_element(By.LINK_TEXT, "Tableau de bord").click()
 
+    #browser.get("https://www.superprof.fr/tableau-de-bord.html")
+    time.sleep(3)
+    ## get adresse
+    adresse = browser.find_element(By.XPATH, value="/html/body/div[1]/div[2]/div/div[1]/div[1]/div[3]").text
+    print(adresse)
+    ##get price
+    price = browser.find_element(By.XPATH, value="/html/body/div[1]/div[2]/div/div[2]/div[4]/ul/div/li/div[2]/div/span[2]/span[1]").text
+    print(price)
 
     #Link pour annonces
-    browser.get("https://www.superprof.fr/tableau-de-bord.html/annonces/liste/")
+    #browser.get("https://www.superprof.fr/tableau-de-bord.html/annonces/liste/")
+    browser.find_element(By.CSS_SELECTOR, ".static-content .icon-menu").click()
+    browser.find_element(By.LINK_TEXT, "Annonces").click()
 
     #choper le lien de reco
-    lien_reco = browser.findElement(By.XPATH("/html/body/div[1]/div[2]/div/div/main/div/div[1]/div[7]/div[2]/div/input")).getText()
+    browser.find_element(By.XPATH, value="/html/body/div[1]/div[2]/div/div/main/div/div[1]/div[7]/div[2]/div/input").click()
+    lien_reco = pyperclip.paste()
     print(lien_reco)
-
+    time.sleep(1)
     #voir en tant qu'eleve et prendre le nombre d'avis
-    browser.find_element(By.XPATH, value="/html/body/div[1]/div[2]/div/div/main/div/div[2]/div[2]/div[2]/a").click()
-    nb_reco = browser.findElement(By.XPATH("/html/body/div[2]/div[2]/div/div[1]/div/div[2]/div[2]/div[4]/div[1]/div[2]/span[2]")).getText()
-    print(nb_reco)
+    #browser.find_element(By.XPATH, value="/html/body/div[1]/div[2]/div/div/main/div/div[2]/div[2]/div[2]/a").click()
+    #browser.find_element(By.LINK_TEXT, "Voir en tant qu\'élève").click()
+    try :
+ 
+        WebDriverWait(browser, 5).until(EC.element_to_be_clickable((By.LINK_TEXT, "Voir en tant qu\'élève"))).click()
+        nb_reco = browser.find_element(By.XPATH, value="/html/body/div[2]/div[2]/div/div[1]/div/div[2]/div[2]/div[4]/div[1]/div[2]/span[2]").text
+        print(nb_reco)
+    except Exception as e: 
+        print(e)
+        nb_reco = 0
+    
+
 
     browser.quit()
 
