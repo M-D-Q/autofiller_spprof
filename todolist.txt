@@ -1,0 +1,6 @@
+- ajouter un implicit wait sur tous les script pour faire simple, mais idealment il faut faire que du explicit  wait
+- instaurer une variable timeout pour les wait avec condition
+- changer les selecteur en suivant cette hierarchie de préférence :  id > Name > CSSSelector > XPath
+- passer en OOP, creer des fonctions propre. Comme dans ces exemples de Jim https://github.com/jimdevops19/SeleniumSeries/blob/master/Bot%20Project/10%20-%20Deal%20Reporting%20Part%202/run.py
+kek
+ajouter un requirements.txt
