@@ -1,4 +1,4 @@
-import linkfinder.constants as const
+#import linkfinder.constants as const
 import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -6,6 +6,8 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
+import pyperclip
+
 
 class Link_finder(webdriver.Chrome):
     def __init__(self, driver_path=r"C:/SeleniumDrivers", teardown=False):
@@ -21,8 +23,8 @@ class Link_finder(webdriver.Chrome):
         if self.teardown:
             self.quit()
     
-    def land_first_page(self):
-        self.get(const.BASE_URL)
+    def land_first_page(self,url):
+        self.get(url)
     
     def connexion(self, username, password="Kiev2022"):
         self.driver.find_element(By.CSS_SELECTOR, ".static-content .basic-header-button:nth-child(3)").click()

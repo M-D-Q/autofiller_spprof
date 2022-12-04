@@ -35,6 +35,9 @@ for chocolat in liste_email :
 
     #lancement du browser et get superprof.fr
     #url = str(input("URL ?"))
+    
+    #lancement du browser et get superprof.fr
+    #url = str(input("URL ?"))
     url = "https://www.superprof.fr/"
     browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     browser.get(url)
